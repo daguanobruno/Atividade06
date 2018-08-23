@@ -2,7 +2,7 @@ languagem: java
 
 addons:
     sonarcloud: 
-        organization: "daguanobruno"
+        organization: "daguanobruno-github"
        
  
 script:
