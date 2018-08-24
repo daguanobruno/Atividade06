@@ -1,5 +1,6 @@
 package MedianaTest;
 
+import Media.Media;
 import Mediana.Mediana;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -40,7 +41,7 @@ public class MedianaTest {
         
         double[] v = {5,5,5,5,5};
         
-        Mediana m = new Mediana();
+        Media m = new Media();
         
         double res = m.getMedia(v);
         assertEquals(5, res, 0.01);
