@@ -15,23 +15,23 @@ public class MedianaTest {
     
     @Test
     public void testeVetorOrdenadoImpar(){
-        double[] v = {1,2,3,4,5};
+        double[] v = {1,2,3,4,5,6,7};
         
         Mediana m = new Mediana();
         
         double res = m.getMediana(v);
-        assertEquals(3, res, 0.01);
+        assertEquals(4, res, 0.01);
     }
     
     @Test
     public void testeVetorOrdenadoPar(){
         
-        double[] v = {1,2,4,5};
+        double[] v = {1,4,4,5,6,7,7,7};
         
         Mediana m = new Mediana();
         
         double res = m.getMediana(v);
-        assertEquals(2.5, res, 0.01);
+        assertEquals(5.5, res, 0.01);
         
     }
     
