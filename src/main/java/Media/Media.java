@@ -1,22 +1,18 @@
 package Media;
 
-
 public class Media {
-    
-    public double getMedia(double[] v){
-        
-        double media = 0;
-        double soma = 0;
-        int aux = 0;
-        
-        for(int i = 0; i < v.length; i++){
+
+    private double media = 0, soma = 0;
+    private int aux = 0;
+
+    public double getMedia(double[] v) {
+
+        for (int i = 0; i < v.length; i++) {
             soma = soma + v[i];
-            aux ++;
+            aux++;
         }
-        
-        media = soma / aux;
-        
-        return media;
+
+        return media = soma / aux;
     }
-    
+
 }
