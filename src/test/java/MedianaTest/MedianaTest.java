@@ -35,4 +35,16 @@ public class MedianaTest {
         
     }
     
+    @Test
+    public void testeMedia(){
+        
+        double[] v = {5,5,5,5,5};
+        
+        Mediana m = new Mediana();
+        
+        double res = m.getMedia(v);
+        assertEquals(5, res, 0.01);
+        
+    }
+    
 }
