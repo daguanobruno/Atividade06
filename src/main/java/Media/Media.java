@@ -14,5 +14,29 @@ public class Media {
 
         return media = soma / aux;
     }
+    
+    public double getMenorValor(double[] v){
+        
+        double menorValor = v[0];
+        
+        for(int i = 0; i < v.length; i++){ 
+            if(menorValor > v[i]){
+                menorValor = v[i];
+            }
+        }
+        return menorValor;
+    }
+    
+    public double getMaiorValor(double[] v){
+        
+        double maiorValor = v[0];
+        
+        for(int i = 0; i < v.length; i++){ 
+            if(maiorValor < v[i]){
+                maiorValor = v[i];
+            }
+        }
+        return maiorValor;
+    }
 
 }
