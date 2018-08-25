@@ -1,13 +1,21 @@
 package Media;
 
+import Exception.MensagemException;
+
+
 public class Media {
 
-    private double media = 0, soma = 0;
+    private double media = 0, soma = 0, menorValor = 0, maiorValor = 0;
     private int aux = 0;
 
-    public double getMedia(double[] v) {
+    public double getMedia(double[] v) throws MensagemException{
 
+        if(v == null){
+                throw new MensagemException();
+            }
+        
         for (int i = 0; i < v.length; i++) {
+            
             soma = soma + v[i];
             aux++;
         }
@@ -15,9 +23,13 @@ public class Media {
         return media = soma / aux;
     }
     
-    public double getMenorValor(double[] v){
+    public double getMenorValor(double[] v) throws MensagemException{
         
-        double menorValor = v[0];
+        menorValor = v[0];
+        
+        if(v == null){
+                throw new MensagemException();
+            }
         
         for(int i = 0; i < v.length; i++){ 
             if(menorValor > v[i]){
@@ -27,9 +39,13 @@ public class Media {
         return menorValor;
     }
     
-    public double getMaiorValor(double[] v){
+    public double getMaiorValor(double[] v) throws MensagemException{
         
-        double maiorValor = v[0];
+        maiorValor = v[0];
+        
+        if(v == null){
+                throw new MensagemException();
+            }
         
         for(int i = 0; i < v.length; i++){ 
             if(maiorValor < v[i]){
@@ -38,5 +54,4 @@ public class Media {
         }
         return maiorValor;
     }
-
 }

@@ -1,5 +1,6 @@
 package MedianaTest;
 
+import Exception.MensagemException;
 import Media.Media;
 import Mediana.Mediana;
 import org.junit.After;
@@ -20,7 +21,14 @@ public class MedianaTest {
 
         Mediana m = new Mediana();
 
-        double res = m.getMediana(v);
+        double res = 0;
+
+        try {
+            res = m.getMediana(v);
+        } catch (MensagemException e) {
+            
+        }
+
         assertEquals(4, res, 0.01);
     }
 
@@ -31,7 +39,13 @@ public class MedianaTest {
 
         Mediana m = new Mediana();
 
-        double res = m.getMediana(v);
+        double res = 0;
+
+        try {
+            res = m.getMediana(v);
+        } catch (MensagemException e) {
+
+        }
         assertEquals(5.5, res, 0.01);
 
     }
@@ -41,9 +55,14 @@ public class MedianaTest {
 
         double[] v = {5, 5, 5, 5, 5};
 
+        double res = 0;
         Media m = new Media();
 
-        double res = m.getMedia(v);
+        try {
+            res = m.getMedia(v);
+        } catch (MensagemException e) {
+            
+        }
         assertEquals(5, res, 0.01);
 
     }
@@ -51,16 +70,37 @@ public class MedianaTest {
     @Test
     public void testeMediaMenor_e_MaiorValor() {
 
-        double[] v = {5,0,1,3,2,4};
+        double[] v = {5, 0, 1, 3, 2, 4};
+
+        double menorValor = 0, maiorValor = 0;
 
         Media m = new Media();
 
-        double menorValor = m.getMenorValor(v);
-        double maiorValor = m.getMaiorValor(v);
-        
+        try {
+            menorValor = m.getMenorValor(v);
+            maiorValor = m.getMaiorValor(v);
+        } catch (MensagemException e) {
+
+        }
+
         assertEquals(0, menorValor, 0.01);
         assertEquals(5, maiorValor, 0.01);
 
     }
-    
+
+    @Test
+    public void testeVetorNulo() throws MensagemException {
+
+        double[] v = null;
+
+        Media m = new Media();
+
+        double res = 0;
+
+        try {
+            res = m.getMedia(v);
+        } catch (MensagemException e) {
+            assertEquals("Erro", e.getMessage());
+        }
+    }
 }

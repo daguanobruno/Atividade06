@@ -1,12 +1,19 @@
 package Mediana;
 
+import Exception.MensagemException;
+
 public class Mediana {
 
     private double mediana = 0;
     private int aux = 0;
 
-    public double getMediana(double[] v) {
+    public double getMediana(double[] v) throws MensagemException{
 
+        if(v == null){
+            throw new MensagemException();
+        }
+        
+        
         for (int i = 0; i < v.length; i++) {
             aux++;
         }
@@ -25,5 +32,4 @@ public class Mediana {
 
         return mediana;
     }
-
 }
