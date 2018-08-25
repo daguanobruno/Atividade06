@@ -48,4 +48,19 @@ public class MedianaTest {
 
     }
 
+    @Test
+    public void testeMediaMenor_e_MaiorValor() {
+
+        double[] v = {1,2,3,4,5};
+
+        Media m = new Media();
+
+        double menorValor = m.getMenorValor(v);
+        double maiorValor = m.getMaiorValor(v);
+        
+        assertEquals(1, menorValor, 0.01);
+        assertEquals(5, maiorValor, 0.01);
+
+    }
+    
 }
