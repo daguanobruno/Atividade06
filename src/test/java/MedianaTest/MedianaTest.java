@@ -126,5 +126,24 @@ public class MedianaTest {
         assertEquals(5, res2[0], 0.01);
         assertEquals(4, res2[1], 0.01);
     }
+    
+    @Test
+    public void DesvioPadrao(){
+        
+        double[] v = {5, 4, 2, 3, 1};
+
+        Media m = new Media();
+        
+        double res = 0;
+        
+        try{
+            res = m.getDesvioPadrao(v);
+        }catch(MensagemException e){
+            
+        }
+        
+        assertEquals(1.4142135623730951, res, 0.01);
+        
+    }
 
 }
