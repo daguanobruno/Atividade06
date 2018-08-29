@@ -146,4 +146,25 @@ public class MedianaTest {
 
     }
 
+       @Test
+    public void NMaior_NMenor() {
+
+        double[] v = {5, 4, 2, 3, 1};
+
+        
+        Media m = new Media();
+        double res = 0, res2 = 0;
+
+        try {
+            res = m.NMaior(v, 4);
+            res2 = m.NMenor(v, 2);
+        } catch (MensagemException e) {
+
+        }
+
+        assertEquals(5, res, 0.01);
+        assertEquals(1, res2, 0.01);
+
+    }
+    
 }
