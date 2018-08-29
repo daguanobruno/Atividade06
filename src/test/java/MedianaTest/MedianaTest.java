@@ -1,5 +1,6 @@
 package MedianaTest;
 
+import DesvioPadrao.DesvioPadrao;
 import Exception.MensagemException;
 import Media.Media;
 import Mediana.Mediana;
@@ -119,31 +120,30 @@ public class MedianaTest {
             res2 = m.acimaMedia(v);
         } catch (MensagemException e) {
         }
-        
+
         assertEquals(2, res1[0], 0.01);
         assertEquals(1, res1[1], 0.01);
 
         assertEquals(5, res2[0], 0.01);
         assertEquals(4, res2[1], 0.01);
     }
-    
+
     @Test
-    public void DesvioPadrao(){
-        
+    public void DesvioPadrao() {
+
         double[] v = {5, 4, 2, 3, 1};
 
-        Media m = new Media();
-        
+        DesvioPadrao d = new DesvioPadrao();
         double res = 0;
-        
-        try{
-            res = m.getDesvioPadrao(v);
-        }catch(MensagemException e){
-            
+
+        try {
+            res = d.getDesvioPadrao(v);
+        } catch (MensagemException e) {
+
         }
-        
+
         assertEquals(1.4142135623730951, res, 0.01);
-        
+
     }
 
 }
