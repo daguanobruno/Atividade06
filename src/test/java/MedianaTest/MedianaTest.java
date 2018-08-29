@@ -26,7 +26,7 @@ public class MedianaTest {
         try {
             res = m.getMediana(v);
         } catch (MensagemException e) {
-            
+
         }
 
         assertEquals(4, res, 0.01);
@@ -61,7 +61,7 @@ public class MedianaTest {
         try {
             res = m.getMedia(v);
         } catch (MensagemException e) {
-            
+
         }
         assertEquals(5, res, 0.01);
 
@@ -102,5 +102,29 @@ public class MedianaTest {
         } catch (MensagemException e) {
             assertEquals("Erro", e.getMessage());
         }
+    }
+
+    @Test
+    public void teste_acima_abaixo_media() {
+
+        double[] v = {1, 2, 3, 4, 5};
+
+        Media m = new Media();
+
+        double[] abaixo = {1,2};
+        double[] acima = {4,5};
+        
+        double[] res1 = {};
+        double[] res2 = {};
+
+        try {
+            res1 = m.abaixoMedia();
+            res2 = m.acimaMedia();
+        } catch (MensagemException e) {
+
+        }
+
+        assertEquals(res1, abaixo, 0.01);
+        assertEquals(res2, acima, 0.01);
     }
 }
