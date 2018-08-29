@@ -146,25 +146,27 @@ public class MedianaTest {
 
     }
 
-       @Test
-    public void NMaior_NMenor() {
+    @Test
+    public void NMaior() {
 
         double[] v = {5, 4, 2, 3, 1};
 
-        
         Media m = new Media();
-        double res = 0, res2 = 0;
+        double[] res = null, res2 = null;
 
         try {
-            res = m.NMaior(v, 4);
-            res2 = m.NMenor(v, 2);
+            res = m.nMaior(v, 4);
+            res2 = m.nMenor(v, 4);
         } catch (MensagemException e) {
 
         }
 
-        assertEquals(5, res, 0.01);
-        assertEquals(1, res2, 0.01);
+        assertEquals(5, res[0], 0.01);
+
+        assertEquals(2, res2[0], 0.01);
+        assertEquals(3, res2[1], 0.01);
+        assertEquals(1, res2[2], 0.01);
 
     }
-    
+
 }

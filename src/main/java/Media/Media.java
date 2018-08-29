@@ -88,4 +88,36 @@ public class Media {
         return auxMedia;
     }
 
+    public double[] nMaior(double[] v, double valor) throws MensagemException {
+        double[] auxMaior = new double[v.length];
+        int j = 0;
+
+        ve.verificação(v);
+
+        for (int i = 0; i < v.length; i++) {
+            if (v[i] > valor) {
+                auxMaior[j] = v[i];
+                j++;
+            }
+        }
+        return auxMaior;
+
+    }
+    
+    
+      public double[] nMenor(double[] v, double valor) throws MensagemException {
+        double[] auxMenor = new double[v.length];
+        int j = 0;
+
+        ve.verificação(v);
+
+        for (int i = 0; i < v.length; i++) {
+            if (v[i] < valor) {
+                auxMenor[j] = v[i];
+                j++;
+            }
+        }
+        return auxMenor;
+
+    }
 }
