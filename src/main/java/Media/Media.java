@@ -5,11 +5,12 @@ import Exception.MensagemException;
 public class Media {
 
     private double media = 0, soma = 0, menorValor = 0, maiorValor = 0;
-    private int aux = 0;
+    private int aux = 0, j = 0;
+    private double[] auxMedia = null;
 
     public double getMedia(double[] v) throws MensagemException {
 
-        if (v == null) {
+        if (v == null || v.length == 0) {
             throw new MensagemException();
         }
 
@@ -26,7 +27,7 @@ public class Media {
 
         menorValor = v[0];
 
-        if (v == null) {
+        if (v == null || v.length == 0) {
             throw new MensagemException();
         }
 
@@ -42,7 +43,7 @@ public class Media {
 
         maiorValor = v[0];
 
-        if (v == null) {
+        if (v == null || v.length == 0) {
             throw new MensagemException();
         }
 
@@ -56,43 +57,42 @@ public class Media {
 
     public double[] abaixoMedia(double[] v) throws MensagemException {
 
-        double [] aux = new double[v.length]; 
-        int j = 0;
-        
-        if (v == null) {
+        double[] auxMedia = new double[v.length];
+
+        if (v == null || v.length == 0) {
             throw new MensagemException();
         }
-        
+
         media = getMedia(v);
-        
-        for(int i = 0; i < v.length; i++){
-            if(v[i] < media){
-                aux[j] = v[i];
+
+        for (int i = 0; i < v.length; i++) {
+            if (v[i] < media) {
+                auxMedia[j] = v[i];
                 j++;
             }
         }
-       
-        return aux;
+
+        return auxMedia;
     }
 
     public double[] acimaMedia(double[] v) throws MensagemException {
-  double [] aux = new double[v.length]; 
+        double[] auxMedia = new double[v.length];
         int j = 0;
-        
-        if (v == null) {
+
+        if (v == null || v.length == 0) {
             throw new MensagemException();
         }
-        
+
         media = getMedia(v);
-        
-        for(int i = 0; i < v.length; i++){
-            if(v[i] > media){
-                aux[j] = v[i];
+
+        for (int i = 0; i < v.length; i++) {
+            if (v[i] > media) {
+                auxMedia[j] = v[i];
                 j++;
             }
         }
-       
-        return aux;
+
+        return auxMedia;
     }
 
 }

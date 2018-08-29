@@ -9,10 +9,9 @@ public class Mediana {
 
     public double getMediana(double[] v) throws MensagemException{
 
-        if(v == null){
+        if(v == null || v.length == 0){
             throw new MensagemException();
         }
-        
         
         for (int i = 0; i < v.length; i++) {
             aux++;
