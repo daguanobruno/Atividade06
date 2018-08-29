@@ -1,6 +1,7 @@
 package Media;
 
 import Exception.MensagemException;
+import Exception.Verificacao;
 
 public class Media {
 
@@ -8,11 +9,11 @@ public class Media {
     private int aux = 0, j = 0;
     private double[] auxMedia = null;
 
+    Verificacao ve = new Verificacao();
+
     public double getMedia(double[] v) throws MensagemException {
 
-        if (v == null || v.length == 0) {
-            throw new MensagemException();
-        }
+        ve.verificação(v);
 
         for (int i = 0; i < v.length; i++) {
 
@@ -27,9 +28,7 @@ public class Media {
 
         menorValor = v[0];
 
-        if (v == null || v.length == 0) {
-            throw new MensagemException();
-        }
+        ve.verificação(v);
 
         for (int i = 0; i < v.length; i++) {
             if (menorValor > v[i]) {
@@ -43,9 +42,7 @@ public class Media {
 
         maiorValor = v[0];
 
-        if (v == null || v.length == 0) {
-            throw new MensagemException();
-        }
+        ve.verificação(v);
 
         for (int i = 0; i < v.length; i++) {
             if (maiorValor < v[i]) {
@@ -59,9 +56,7 @@ public class Media {
 
         double[] auxMedia = new double[v.length];
 
-        if (v == null || v.length == 0) {
-            throw new MensagemException();
-        }
+        ve.verificação(v);
 
         media = getMedia(v);
 
@@ -79,9 +74,7 @@ public class Media {
         double[] auxMedia = new double[v.length];
         int j = 0;
 
-        if (v == null || v.length == 0) {
-            throw new MensagemException();
-        }
+        ve.verificação(v);
 
         media = getMedia(v);
 
@@ -95,5 +88,4 @@ public class Media {
         return auxMedia;
     }
 
-   
 }

@@ -1,18 +1,19 @@
 package Mediana;
 
 import Exception.MensagemException;
+import Exception.Verificacao;
 
 public class Mediana {
 
     private double mediana = 0;
     private int aux = 0;
 
-    public double getMediana(double[] v) throws MensagemException{
+    Verificacao ve = new Verificacao();
 
-        if(v == null || v.length == 0){
-            throw new MensagemException();
-        }
-        
+    public double getMediana(double[] v) throws MensagemException {
+
+        ve.verificação(v);
+
         for (int i = 0; i < v.length; i++) {
             aux++;
         }
