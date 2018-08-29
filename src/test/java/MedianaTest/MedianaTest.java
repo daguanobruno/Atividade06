@@ -105,26 +105,26 @@ public class MedianaTest {
     }
 
     @Test
-    public void teste_acima_abaixo_media() {
+    public void teste_acima_abaixo_media() throws MensagemException {
 
-        double[] v = {1, 2, 3, 4, 5};
+        double[] v = {5, 4, 2, 3, 1};
 
         Media m = new Media();
 
-        double[] abaixo = {1,2};
-        double[] acima = {4,5};
-        
         double[] res1 = {};
         double[] res2 = {};
 
         try {
-            res1 = m.abaixoMedia();
-            res2 = m.acimaMedia();
+            res1 = m.abaixoMedia(v);
+            res2 = m.acimaMedia(v);
         } catch (MensagemException e) {
-
         }
+        
+        assertEquals(2, res1[0], 0.01);
+        assertEquals(1, res1[1], 0.01);
 
-        assertEquals(res1, abaixo, 0.01);
-        assertEquals(res2, acima, 0.01);
+        assertEquals(5, res2[0], 0.01);
+        assertEquals(4, res2[1], 0.01);
     }
+
 }
