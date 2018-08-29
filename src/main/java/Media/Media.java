@@ -7,7 +7,7 @@ public class Media {
 
     private double media = 0, soma = 0, menorValor = 0, maiorValor = 0;
     private int aux = 0, j = 0;
-    private double[] auxMedia = null;
+    private double[] auxMedia = null, auxMenor = null, auxMaior = null;
 
     Verificacao ve = new Verificacao();
 
@@ -20,7 +20,6 @@ public class Media {
             soma = soma + v[i];
             aux++;
         }
-
         return media = soma / aux;
     }
 
@@ -54,7 +53,7 @@ public class Media {
 
     public double[] abaixoMedia(double[] v) throws MensagemException {
 
-        double[] auxMedia = new double[v.length];
+        auxMedia = new double[v.length];
 
         ve.verificação(v);
 
@@ -66,12 +65,11 @@ public class Media {
                 j++;
             }
         }
-
         return auxMedia;
     }
 
     public double[] acimaMedia(double[] v) throws MensagemException {
-        double[] auxMedia = new double[v.length];
+        auxMedia = new double[v.length];
         int j = 0;
 
         ve.verificação(v);
@@ -84,12 +82,11 @@ public class Media {
                 j++;
             }
         }
-
         return auxMedia;
     }
 
     public double[] nMaior(double[] v, double valor) throws MensagemException {
-        double[] auxMaior = new double[v.length];
+        auxMaior = new double[v.length];
         int j = 0;
 
         ve.verificação(v);
@@ -101,12 +98,10 @@ public class Media {
             }
         }
         return auxMaior;
-
     }
-    
-    
-      public double[] nMenor(double[] v, double valor) throws MensagemException {
-        double[] auxMenor = new double[v.length];
+
+    public double[] nMenor(double[] v, double valor) throws MensagemException {
+        auxMenor = new double[v.length];
         int j = 0;
 
         ve.verificação(v);
@@ -118,6 +113,5 @@ public class Media {
             }
         }
         return auxMenor;
-
     }
 }
